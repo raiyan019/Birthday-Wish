@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffcccb;
+        }
+        .cake {
+            font-size: 50px;
+            margin-top: 20px;
+            animation: wiggle 0.5s infinite alternate;
+        }
+        @keyframes wiggle {
+            from { transform: rotate(-5deg); }
+            to { transform: rotate(5deg); }
+        }
+        #message {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎉 Happy Birthday, You Legend! 🎂</h1>
+    <p>You're now officially too old for "young adult" novels. Congrats! 🎈</p>
+    
+    <div class="cake">🎂</div>
+
+    <button onclick="blowCandle()">Blow the Candle</button>
+    <p id="message"></p>
+
+    <script>
+        function blowCandle() {
+            let message = document.getElementById("message");
+            let cake = document.querySelector(".cake");
+
+            cake.innerHTML = "🔥🎂🔥";
+            setTimeout(() => {
+                cake.innerHTML = "🎂";
+                message.innerText = "Oops, I relit! Too bad, no wishes for you. 😆";
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
